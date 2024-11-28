@@ -1,0 +1,597 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: rgba(255, 255, 255, 0.594);
+  color: #333;
+  animation: fadeIn 1s ease-in-out;
+  font-size: 1vw;
+}
+
+
+/* Header */
+.header {
+  background-color: black;
+  color: white;
+  padding: 5px 0;
+  text-align: center;
+  animation: slideInFromTop 1s ease-out;
+  position: fixed; /* This makes the header fixed */
+  top: 0; /* Aligns the header to the top of the viewport */
+  left: 0; /* Ensures the header spans the full width */
+  width: 100%; /* Makes the header span the full width */
+  z-index: 1000; /* Ensures the header is always on top */
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.logo-img, .logo-img2 {
+  width: 50px;
+  height: auto;
+  margin: 0 10px;
+}
+
+.university-name {
+  font-size: 1.8em;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Home Section Styling */
+.home {
+  background: url(INDEX.jpeg) no-repeat center center; /* Center the image */
+  background-size: cover; /* Make the image cover the entire element */
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  height: 90vh; /* Optional: Set the height to 100% of the viewport */
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 0;
+}
+
+.home h3 {
+  color: white;
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: normal;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+  position: relative;
+  z-index: 1; /* Ensures it's above the overlay */
+}
+
+.home h1 {
+  font-size: 90px;
+  font-weight: bold;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0); /* Stronger shadow for emphasis */
+  position: relative;
+  z-index: 1;
+}
+
+.home span {
+  color: cyan;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.226); /* Shadow for contrast */
+  position: relative;
+  z-index: 1;
+}
+
+.home p {
+  font-size: 20px;
+  margin-top: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Slight shadow for clarity */
+  position: relative;
+  z-index: 1;
+}
+
+/* Animate the text */
+.home h3,
+.home h1,
+.home span,
+.home p {
+  position: relative;
+  z-index: 1;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInSlideUp 1s ease forwards;
+}
+
+/* Add delay for each element */
+.home h3 {
+  animation-delay: 0.2s;
+}
+
+.home h1 {
+  animation-delay: 0.4s;
+}
+
+.home span {
+  animation-delay: 0.6s;
+}
+
+.home p {
+  animation-delay: 0.8s;
+}
+
+/* Keyframes for animation */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Containers */
+.sections-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -80px; 
+  margin-bottom: 10px;/* Overlaps hero section */
+  gap: -1px;
+}
+
+.section {
+  width: 27%;
+  padding: 20px;
+  background-color: orangered;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  
+}
+@media (max-width: 600px) {
+  .section {
+      flex-direction: column; /* o iba pang layout na mas angkop sa maliit na screen */
+  }
+}
+
+/* Delay animation for each section */
+.section:nth-child(1) { animation-delay: 0.2s; }
+.section:nth-child(2) { animation-delay: 0.4s; }
+.section:nth-child(3) { animation-delay: 0.6s; }
+.section:nth-child(4) { animation-delay: 0.8s; }
+
+/* Section Colors */
+.future-students { background-color: #04202de1; }
+.academic-programs { background-color: #3a3368df; }
+.presidential-search { background-color: #863a68dd; }
+.virtual-tours { background-color: #a33f3de4; }
+
+.section h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: wheat;
+}
+
+.section p {
+  font-size: 14px;
+  color: white;
+}
+/*RESEARCH*/
+
+
+
+/* Footer Styling */
+footer {
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+footer .contact {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer .home-sci a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .home-sci a:hover {
+  color: orangered;
+}
+
+footer p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.learn-more-btn {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid orangered;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.learn-more-btn:hover {
+  background-color: orangered;
+  color: white;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/*meet the faculty*/
+/* General style for the scrolling container */
+.scrolling-wrapper {
+  margin-top: 15px;
+  display: flex;
+  overflow-x: hidden; /* Hide the scrollbar */
+  scroll-behavior: smooth;
+  width: 100%; /* Ensure the container fits the screen width */
+  position: relative; /* Needed for absolute positioning */
+}
+
+/* Hide scrollbar for webkit browsers */
+.scrolling-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each item within the scrolling container */
+.scrolling-wrapper > div {
+  flex: 0 0 auto; /* Prevent resizing */
+  margin-right: 30px; /* Space between images */
+  animation: slide 20s linear infinite; /* Infinite scrolling animation */
+}
+.scrolling-wrapper img{
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.77);
+}
+
+/* Animation for seamless horizontal scrolling */
+@keyframes slide {
+  0% {
+    transform: translateX(0); /* Start at the beginning */
+  }
+  100% {
+    transform: translateX(-100%); /* Scroll completely to the left */
+  }
+}
+
+/* Fade-in effect for items */
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Slide-up effect for items */
+.slide-up {
+  animation: slideUp 2s ease-in-out;
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Ensures smooth transition of images */
+.scrolling-wrapper > div:last-child {
+  margin-right: 0; /* Remove margin from last item */
+
+}
+
+
+
+/* RESEARCH*/
+/* Curriculum List Styling */
+.cont{
+  background: url(academic/ACA.png) no-repeat center center fixed;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cont h3{
+  font-size: 24px;
+  justify-content: center;
+  background-color: maroon;
+  text-align: center;
+  color: wheat;
+}
+  .offerings-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 40px 20px;
+    padding: 20px;
+  }
+  
+  .card {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.77);
+  }
+  
+  .card-header {
+    background-color: orangered;
+    color: white;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+  }
+  
+  .card-body {
+    margin-bottom: 2px;
+    padding: 20px;
+  }
+  
+  .sub-title {
+    color: orangered;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  .nested-list {
+    margin-left: 20px;
+    list-style-type: circle;
+  }
+  
+  a {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: orangered;
+ 
+  }
+  /* Animation */
+  .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+   
+      
+    .cards {
+      margin-top: 0px;
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      max-width:100%;
+      margin: 0 auto;
+    }
+
+  .cards h2 {
+    background-color: orangered;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+  }
+  
+  .card-bodys {
+    padding: 20px;
+      margin-top: 20px;
+  }
+  
+  
+  /* Image styles */
+  .image-container {
+      margin-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      
+  }
+  
+  .image-container img {
+      width: 30%; /* Adjusts the size of the images */
+      height: 50%; /* Maintains aspect ratio */
+      border-radius: 8px; /* Optional: adds rounded corners to images */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.873); /* Optional: adds shadow to images */
+  }
+
+  
+
+  .about {
+    background-color: wheat;
+    margin-top: 5px;
+   }
+   .vision-mission-section {
+    background-color: wheat;
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 20px;
+      gap: 15px;
+    }
+   
+    
+    .vision, .mission, .quality-policy, .socotec img{
+      border: 2px solid  maroon;
+      width: 30%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.806);
+    }
+    .socotec img{
+    width: 100%; /* Full width on small screens */
+    max-width: 400px;
+
+    
+    }
+
+    .vision h3, .mission h3, .quality-policy h3,  .socotec img{
+      text-align: center;
+      font-size: 24px;
+      color: #100e0e;
+    }
+    
+    .vision p, .mission p, .quality-policy p {
+      text-align: center;
+      font-size: 14px;
+      color: #0a0909;
+    
+  
+}
+
+/*MAX WIDTH*/
+
+@media (max-width: 768px) {
+  body {
+      font-size: 16px; /* Minimum font size for mobile devices */
+  }
+  .logo-img, .logo-img2 {
+    width: 30px;
+    height: auto;
+    margin: 0 10px;
+  }
+  .university-name {
+    font-size: 20px;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+  .home h3 {
+     font-size: 20px;   
+  }
+  .home h1 {
+    font-size: 60px;
+    
+  }
+  .home p {
+    font-size: 15px;
+  }
+  
+  .section h2 {
+    font-size: 18px;
+  }
+  .section p {
+    font-size: 14px;}
+
+    .scrolling-wrapper {
+      width: 100%;}
+.card {
+  
+        width: 450px;}
+.sub-title {     
+  font-size: 18px;}
+
+.image-container{
+  align-items: center; 
+  flex-direction: column;
+  gap: 20px;
+}
+.image-container img{
+  width: 100%; /* Full width on small screens */
+  max-width: 400px;
+}
+
+.vision-mission-section  {
+  align-items: center; 
+  flex-direction: column;
+  gap: 20px;
+ 
+}
+.vision, .mission, .quality-policy {
+  width: 100%; /* Full width on small screens */
+  max-width: 400px; /* Optional max width */
+}
+
+.vision h3, .mission h3, .quality-policy h3 {
+  font-size: 18px;
+
+}
+.vision p, .mission p, .quality-policy p {
+  font-size:13px;}
+}
