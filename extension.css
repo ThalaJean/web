@@ -1,0 +1,391 @@
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url(academic/ACA.png) no-repeat center center fixed;
+    color: #333;
+  
+    .event-card {
+        width: 100%; /* Mas malawak sa mas maliit na screen */
+    }
+  }
+  
+  h1, h2, h3, p {
+    margin: 0;
+  }
+  
+  /* Header Styling */
+  .header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .logo-img, .logo-img2 {
+    height: 30px;
+    margin-right: 10px;
+    font-size: 1vw;
+  }
+  
+  .university-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1vw;
+  }
+  
+  .navbar {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    position: relative;
+  }
+  
+  .navbar a:hover {
+    color: orangered;
+  }
+  
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: orangered;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .navbar a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  /* Title Section */
+  .title-section {
+    background-color: black;
+    text-align: center;
+    padding: 20px 20px;
+  }
+  
+  .title-section h1 {
+    color:rgb(255, 255, 255);
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .title-section h1 span {
+    color: orangered;
+  }
+  
+  /* Content Section */
+  .content-section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .framework {
+    margin-bottom: 40px;
+  }
+  .framework h2{
+    font-size: 24px; /* Font size for the header */
+    font-weight: bold; /* Bold text */
+    justify-content: center; /* Center alignment */
+    background-color: maroon; /* Maroon background */
+    text-align: center; /* Center text */
+    color: white; /* Wheat color for text */
+    padding: 10px; /* Padding around the header */
+    border-radius: 5px; /* Rounded corners */
+  }
+  .framework img {
+
+    width: 90%;
+    max-width: 700px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  .parent-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+   
+}
+
+  .update-note {
+    font-size: 1.125rem; /* 18px in rem */
+    color: white;
+    font-weight: bold;
+    background-color: orangered; 
+    padding: 0.3125rem; /* 5px in rem */
+    border-radius: 0.3125rem; /* 5px in rem */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    max-width: 1200px; /* Limit the maximum width */
+    max-height: 100px; /* Limit the maximum height (optional) */
+    overflow: hidden; /* Hide overflow if content exceeds the max height */
+}
+
+.update-note:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+}
+  
+  /* Accomplishments Section */
+  .accomplishments-section {
+    padding: 40px 20px;
+    background-color: #fff; /* White background for the section */
+}
+
+.section-header {
+    font-size: 24px; /* Font size for the header */
+    font-weight: bold; /* Bold text */
+    justify-content: center; /* Center alignment */
+    background-color: maroon; /* Maroon background */
+    text-align: center; /* Center text */
+    color: wheat; /* Wheat color for text */
+    padding: 10px; /* Padding around the header */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+/*event*/
+.event-box {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(245, 222, 179, 0.438);
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+gap: 20px;
+}
+
+.event-img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.event-text {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.event-text h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.event-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.event-text .event-date {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+  /* Reports Section */
+  .reports-section {
+    padding: 40px 20px;
+    background-color: #fff;
+  }
+  
+  .reports-section ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .reports-section li {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .reports-section li a {
+    text-decoration: none;
+    color: orangered;
+  }
+  
+  .reports-section li a:hover {
+    text-decoration: underline;
+  }
+  
+  .reports-section .update {
+    font-size: 18px;
+    color: #777;
+    text-align: center;
+  }
+  /* Footer Styling */
+footer {
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+footer .contact {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer .home-sci a {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .home-sci a:hover {
+  color: orangered;
+}
+
+footer p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.learn-more-btn {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid orangered;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.learn-more-btn:hover {
+  background-color: orangered;
+  color: white;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  body {
+margin-top:5px;
+  }
+  .logo-img, .logo-img2 {
+    width: 20px;
+    height: auto;
+  }
+  .university-name {
+    font-size: 15px;
+ 
+}
+.navbar {
+
+  gap:20px;
+}
+.navbar i {
+display: none;
+}
+.navbar a {
+  font-size:10px;
+}
+.header {
+  margin-top: -5px;
+  padding: 8px 10px;
+}.logo-img, .logo-img2 {
+  display: none; /* Tanggalin ang logo */
+}
+.title-section {
+  padding: 10px 20px;
+}
+.title-section h1 {
+  font-size:20px;
+
+}
+.framework h2{
+  font-size: 15px;
+}
+.update-note {
+
+  font-size: 15px;
+}
+.section-header {
+  font-size: 18px;
+}
+
+.container {
+  margin-top: 30px;
+}
+.event-img {
+  width: 100px;
+  height: 200px;}
+
+.event-text h3 {
+  margin-top: -290px;
+  margin-bottom:230px ;
+  text-align: center;
+  font-size: 15px;}
+  
+.event-text p {
+      font-size: 13px;
+  }
+
+  .event-box {
+      flex-direction: column; /* Gawing vertical ang layout */
+      align-items: center;   /* Ayusin ang alignment */
+  }
+  .event-boxs {
+      flex-direction: column; /* Gawing vertical ang layout */
+      align-items: center;   /* Ayusin ang alignment */
+  }
+
+
+  .event-img {
+      margin-top: 60px;
+      width: 100%;
+      margin-bottom: 10px;
+        /* Maglagay ng space sa pagitan ng image at title */
+  }
+
+  .event-text {
+      text-align: justify;  /* Ayusin ang text alignment para consistent */
+  }
+}
